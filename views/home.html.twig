@@ -15,8 +15,8 @@
       <h3>Your Contacts:</h3>
       {% for contact in contacts %}
         <div class='contactCard'>
-          <p>Name: {{ contact.getName }}</p>
-          <p>Phone Number: {{ contact.getPhone }}</p>
+          <h4>{{ contact.getName }}</h4>
+          <p>Phone #: {{ contact.getPhone }}</p>
           <p>Address: {{ contact.getAddress }}</p>
         </div>
       {% endfor %}
