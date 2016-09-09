@@ -14,7 +14,9 @@
         return $app['twig']->render('home.html.twig', array('contacts' => Contact::getAll()));
     });
 
-    $app->get("/create_contact", function() use($app) {
+    $app->post("/create_contact", function() use($app) {
+        $contact = new Contact($_POST['name'], $_POST['phone'], $_POST['address']);
+        $contact->save();
         return $app['twig']->render('create_contact.html.twig', array('contact' => $contact));
     });
 
