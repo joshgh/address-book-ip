@@ -10,3 +10,10 @@ form ul {
 form li {
   margin-bottom: 10px;
 }
+
+#homeBottom {
+  margin-top: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 0 10px;
+}

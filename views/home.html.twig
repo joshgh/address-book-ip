@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="/css/styles.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
     <title>Address Book</title>
   </head>
   <body>
+    <div class='container'>
     <h1>Address Book</h1>
     {% if contacts is not empty %}
       <h2>Your Contacts:</h2>
       {% for contact in contacts %}
-        <li>
+        <div class='contactCard'>
           <p>Name: {{ contact.getName }}</p>
           <p>Phone Number: {{ contact.getPhone }}</p>
           <p>Address: {{ contact.getAddress }}</p>
-        </li>
+        </div>
       {% endfor %}
+      <form id='clear' method='post' action='/delete_contacts'>
+        <button class='btn btn-danger' type='submit'>Clear Contacts</button>
+      </form>
     {% endif %}
-    <h2>Create a Contact:</h2>
-    <form method='post' action='/create_contact'>
-      <ul>
-        <li>
-          <label for='name'>Name</label>
-          <input type='text' id='name' name='name'>
-        </li>
-        <li>
-          <label for='phone'>Phone Number</label>
-          <input type='text' id='phone' name='phone'>
-        </li>
-        <li>
-          <label for='address'>Address</label>
-          <input type='text' id='address' name='address'>
-        </li>
-        <li>
-          <button type='submit'>Add Contact</button>
-        </li>
-      </ul>
-    </form>
-    <form method='post' action='/delete_contacts'>
-      <button type='submit'>Clear Contacts</button>
-    </form>
+    </div>
+    <div class='container' id='homeBottom'>
+      <h2>Create a Contact:</h2>
+      <form method='post' action='/create_contact'>
+        <ul>
+          <li>
+            <label for='name'>Name</label>
+            <input type='text' id='name' name='name'>
+          </li>
+          <li>
+            <label for='phone'>Phone Number</label>
+            <input type='text' id='phone' name='phone'>
+          </li>
+          <li>
+            <label for='address'>Address</label>
+            <input type='text' id='address' name='address'>
+          </li>
+          <li>
+            <button class='btn btn-primary' type='submit'>Add Contact</button>
+          </li>
+        </ul>
+      </form>
+
+  </div>
   </body>
 </html>
