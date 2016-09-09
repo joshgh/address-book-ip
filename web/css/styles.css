@@ -1,3 +1,7 @@
+body {
+  background-color: #deeaee;
+}
+
 form label {
   display: block;
 }
@@ -5,15 +9,28 @@ form label {
 form ul {
   list-style: none;
   padding: 0;
+  margin-bottom: 0;
 }
 
 form li {
   margin-bottom: 10px;
 }
 
-#homeBottom {
+form li:last-of-type {
+  margin-bottom: 0;
+}
+
+#homeBottom, #contacts {
   margin-top: 10px;
-  border: 2px solid black;
+  background-color: #eef4f6;
   border-radius: 5px;
-  padding: 0 10px;
+  padding: 5px 10px;
+}
+
+.contactCard {
+  background-color: #fefbd8;
+  border: 2px solid black;
+  border-radius: 2px;
+  padding: 3px;
+  margin: 5px 0;
 }

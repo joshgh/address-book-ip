@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
     <title>Address Book</title>
   </head>
   <body>
     <div class='container'>
-    <h1>Address Book</h1>
+      <h1>Address Book</h1>
+    </div>
+    <div id='contacts' class='container'>
+
     {% if contacts is not empty %}
-      <h2>Your Contacts:</h2>
+      <h3>Your Contacts:</h3>
       {% for contact in contacts %}
         <div class='contactCard'>
           <p>Name: {{ contact.getName }}</p>
@@ -20,10 +23,12 @@
       <form id='clear' method='post' action='/delete_contacts'>
         <button class='btn btn-danger' type='submit'>Clear Contacts</button>
       </form>
+    {% else %}
+      <h3>Add some contacts using the form below</h3>
     {% endif %}
     </div>
     <div class='container' id='homeBottom'>
-      <h2>Create a Contact:</h2>
+      <h3>Create a Contact:</h3>
       <form method='post' action='/create_contact'>
         <ul>
           <li>
