@@ -20,7 +20,7 @@
         return $app['twig']->render('create_contact.html.twig', array('contact' => $contact));
     });
 
-    $app->get("/delete_contacts", function() use($app) {
+    $app->post("/delete_contacts", function() use($app) {
         Contact::deleteAll();
         return $app['twig']->render('delete_contacts.html.twig');
     });
